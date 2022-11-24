@@ -35,16 +35,14 @@ const AppBar = () => {
         "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg",
     },
   ];
-  const [count, setCount] = useState(5);
   const [person, setPerson] = useState(persons);
   function handlOnclick() {
     setPerson([]);
-    setCount(0);
   }
   return (
     <>
       <div className="bg-white w-96 h-auto rounded shadow-xl">
-        <MainText count={count} />
+        <MainText count={person.length} />
         {person.map(({ name, age, image }) => (
           <ItemBox name={name} age={age} image={image} />
         ))}
